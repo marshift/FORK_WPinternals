@@ -40,30 +40,31 @@ namespace WPinternals
 
         internal static void CheckExpiration()
         {
-#if PREVIEW
-            //if (IsPrerelease && (DateTime.Now >= ExpirationDate))
-            if (DateTime.Now >= ExpirationDate)
-            {
-                if (Environment.GetCommandLineArgs().Count() > 1)
-                {
-                    Console.WriteLine("This prerelease version is expired!");
-                    CommandLine.CloseConsole();
-                }
-                else
-                    MessageBox.Show("This prerelease version is expired!", "Windows Phone Internals", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                Environment.Exit(0);
-            }
-#endif
+// #if PREVIEW
+//             //if (IsPrerelease && (DateTime.Now >= ExpirationDate))
+//             if (DateTime.Now >= ExpirationDate)
+//             {
+//                 if (Environment.GetCommandLineArgs().Count() > 1)
+//                 {
+//                     Console.WriteLine("This prerelease version is expired!");
+//                     CommandLine.CloseConsole();
+//                 }
+//                 else
+//                     MessageBox.Show("This prerelease version is expired!", "Windows Phone Internals", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+//                 Environment.Exit(0);
+//             }
+// #endif
         }
 
         internal static bool IsRegistered()
         {
-            bool Result = false;
-            if (App.Config.RegistrationName != null)
-            {
-                Result = CalcRegKey() == App.Config.RegistrationKey;
-            }
-            return Result;
+            // bool Result = false;
+            // if (App.Config.RegistrationName != null)
+            // {
+            //     Result = CalcRegKey() == App.Config.RegistrationKey;
+            // }
+            // return Result;
+            return true;
         }
 
         internal static string CalcRegKey()
